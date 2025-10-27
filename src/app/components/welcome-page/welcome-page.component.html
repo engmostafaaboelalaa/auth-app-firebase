@@ -1,0 +1,14 @@
+<div class="pt-5 mt-5 text-center">
+    <img src="/assets/images/firebaselogo.png" alt="Fire Base Logo" width="250" class="mb-1">
+    <h1>Welcome To Our App.</h1>
+    <p>Please Sign In Or Sign Up To Start Using Our App.</p>
+    <div class="mt-4">
+        <button mat-raised-button class="me-2" [routerLink]="'auth/sign-in'">
+          Sign In
+        </button>
+        <button mat-raised-button class="bg-primary text-white" [routerLink]="'auth/sign-up'">
+        Sign Up
+       </button>
+    </div>
+    <a [routerLink]="['/auth/forgot-password']" class="mt-lg-5 fs-4">Forgot Password</a>
+</div>
