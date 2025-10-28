@@ -11,5 +11,5 @@
     <mat-icon>share</mat-icon>
   </button>
 </mat-toolbar>
-<h4> Welcome User</h4>
-<button mat-raised-button class="rounded">Sign Out</button>
+<h4> Welcome {{user.displayName}} {{user.email}}</h4>
+<button mat-raised-button class="rounded" (click)="onSignOut()">Sign Out</button>

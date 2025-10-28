@@ -6,7 +6,7 @@ import {MatInputModule} from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { Router, RouterLink } from '@angular/router';
-import { Auth, AuthErrorCodes, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from '@angular/fire/auth';
+import { Auth, AuthErrorCodes, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
 import { CommonModule } from '@angular/common';
 
 
@@ -57,7 +57,7 @@ export class SignInComponent {
        return;
      }else{
        this.IsSubmissionInProgress = true;
-       signInWithEmailAndPassword(this.auth , this.authForm.value.Email , this.authForm.value.password).then(res=>{
+       createUserWithEmailAndPassword(this.auth , this.authForm.value.Email , this.authForm.value.password).then(res=>{
          this.IsSubmissionInProgress = false;
           this.router.navigate(['/dashboard']);
        })

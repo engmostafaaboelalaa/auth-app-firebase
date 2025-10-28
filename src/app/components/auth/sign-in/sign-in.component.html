@@ -15,6 +15,16 @@
         </div>
         <button mat-raised-button class="d-block mb-2 auth-button rounded bg-white" type="submit">Sign up</button>
     </form>
+    <!-- Error Message-->
+    <div class="alert alert-danger d-flex align-items-center p-2" *ngIf="errorMessage">
+        <mat-icon>info</mat-icon>
+        <p class="ms-2 m-0 fs-3">{{errorMessage}}</p>
+    </div>
+    <!--progrees spinner-->
+    <div class="d-flex align-items-center" *ngIf="IsSubmissionInProgress">
+        <mat-spinner diameter="100"></mat-spinner>
+        signinigIn...
+    </div>
     <button mat-raised-button class="d-block mb-2 auth-button rounded bg-white">Sign up With Google</button>
     <p>You Don't Have An Account?</p>
     <button mat-raised-button class="d-block auth-button bg-primary text-white rounded" [routerLink]="['/auth/sign-in']">Sign In</button>
